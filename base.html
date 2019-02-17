@@ -1,19 +1,39 @@
 <!doctype html>
+
 <html>
+
     <head>
+
         <title>{{title}}</title>
+
+        <style>
+
+            .error{
+
+            color:red;
+
+            }
+
+        </style>
+
     </head>
-<body>
-    <main>
-        <nav>
-            
-            <a href='/blog?sort=newest'>All blog entries</a>
-            <a href='/newpost'>Create new entry</a>
-        </nav>
+
+
+
+<body> 
+
+    <nav>
+
+        <a href="/blog">Main Blog Entry Page</a>  |  <a href="/newpost">Add A New Blog Post</a> 
+
+    </nav>
 
     {% block content %}
-    
-    {% endblock %}
-    </main>
+
+    {% endblock %}  
+
+
+
 </body>
+
 </html>
