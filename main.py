@@ -102,11 +102,11 @@ def new_post():
 
         if len(title_entry) == 0:
 
-            title_error = "You Must Enter a Title For Your Post!"
+            title_error = "You Must Enter a Title For Your Post"
 
         if len(body_entry) == 0:
 
-            body_error = "You Must Enter A Body For Your Entry!"
+            body_error = "You Must Enter A Body For Your Entry"
 
 
 
