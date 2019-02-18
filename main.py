@@ -50,7 +50,7 @@ def blog():
 
         blog = Blog.query.get(id)
 
-        return render_template('viewpost.html', titlebase = 'Build a Blog!', blog =blog)
+        return render_template('viewpost.html', titlebase = 'Build a Blog', blog =blog)
 
 
 
@@ -66,7 +66,7 @@ def blog():
 
         blogs = Blog.query.all()
 
-        return render_template('blog.html', titlebase = 'Build a Blog!', blogs=blogs)
+        return render_template('blog.html', titlebase = 'Build a Blog', blogs=blogs)
 
 
 
