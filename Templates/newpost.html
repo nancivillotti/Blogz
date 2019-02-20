@@ -1,65 +1,23 @@
 {% extends "base.html" %}
 
-
-
 {% block content %}
+    <header>
+        <h1>Add A Blog Entry</h1>
+    </header>
 
-<h1>Enter A New Blog Post</h1>
+    <form action="/newpost" method="POST">
+        <div id="form">
+            <p>Enter blog title:</p>
+            <p><input type="text" name="title" placeholder="Blog title" size="30" /></p>
+            <p><span class="error">{{title_error}}</span></p>
+            
+            <p>Your new entry:</p>
+            <p><textarea name="body" value="textarea" placeholder="Enter blog comment" rows="6" cols="40"></textarea></p>
+            <p><span class="error">{{body_error}}</span></p>
+            
+            <p><input type="submit" value="Add Entry" /></p>
+        </div>
+    </form>
 
-<form action ='/newpost' method = 'post'>
-
-    <table>
-
-        <tr>
-
-            <td>
-
-            <label>
-
-                Blog Post Title:</br>
-
-                <input type="text" name='title' value='{{title}}'/>
-
-                <p class="error">{{title_error}}</p>
-
-            </label>
-
-            </td>
-
-            <tr>
-
-                <td>
-
-                <label>
-
-                Enter A New Blog Post:</br>
-
-                <textarea name="body" rows="12" cols="75" value='{{body}}'></textarea>
-
-                <p class="error">{{body_error}}</p>
-
-                </label>
-
-               </td>
-
-            </tr>
-
-           <tr>
-
-               <td>
-
-                    <input type="submit" value='Add Entry' />
-
-               </td>
-
-           </tr>
-
-        </table> 
-
-</form>
-
-
-
-
-
+    
 {% endblock %}
