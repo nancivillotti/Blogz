@@ -52,7 +52,7 @@ def login():
         password = request.form["password"]
         user = User.query.filter_by(username=username).first()  
         if not user:
-            flash("No such username")
+            flash("Username does not exist")
             return redirect("/login")
         elif user.password != password:
             flash("Incorrect password")
@@ -71,9 +71,9 @@ def signup():
         password = request.form['password']
         verify = request.form['verify']
 
-        #TODO - validate user's data
+        
         if verify == "" or verify != password:
-            flash("The passwords do not match!")
+            flash("The passwords do not match")
             return render_template('signup.html')
 
         existing_user = User.query.filter_by(username=username).first()  
@@ -84,7 +84,7 @@ def signup():
             session['username'] = username 
             return redirect('/')
         else:
-            #TODO = user better response messaging
+            
             return "<h1 class='error'>Duplicate user</h1>"
 
     return render_template('signup.html')
