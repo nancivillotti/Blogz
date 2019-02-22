@@ -54,9 +54,11 @@ def login():
         if not user:
             flash("Username does not exist")
             return redirect("/login")
+
         elif user.password != password:
             flash("Incorrect password")
             return redirect("/login")
+
         else:
             session['username'] = username
             flash("Logged in")
@@ -75,6 +77,12 @@ def signup():
         if verify == "" or verify != password:
             flash("The passwords do not match")
             return render_template('signup.html')
+
+
+        if len(password) < 3:
+            flash("Password must be at least three characters long")
+            return render_template('signup.html')
+
 
         existing_user = User.query.filter_by(username=username).first()  
         if not existing_user:   
